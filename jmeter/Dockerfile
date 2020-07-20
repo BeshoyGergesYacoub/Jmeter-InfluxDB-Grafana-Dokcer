@@ -16,4 +16,6 @@ ENV PATH $JMETER_HOME/bin:$PATH
 
 ADD test/${JMETER_TEST} test/${JMETER_TEST}
 
-ENTRYPOINT jmeter -n -t test/${JMETER_TEST}
+ADD test/user.properties test/user.properties
+
+ENTRYPOINT jmeter -n -t test/${JMETER_TEST} -p test/user.properties

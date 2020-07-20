@@ -9,7 +9,7 @@ services:
                 build: 
                         context: "jmeter"
                 environment:
-                        - JMETER_TEST=default_test_plan.jmx
+                        - JMETER_TEST=loadtest.jmx
                 depends_on:
                         - influxdb
         grafana:
